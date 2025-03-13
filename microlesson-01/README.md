@@ -12,7 +12,7 @@ By the end of this microlesson, you will:
 - **Identify** key challenges in deploying ML models.
 - **Apply** core MLOps principles to streamline ML workflows.
 
-## **1. Why MLOps Matters**
+## **Why MLOps Matters**
 
 ### **The Problem: ML Models in Production**
 Many organizations build machine learning models but struggle with:
@@ -58,7 +58,7 @@ graph TD;
 - Ensure compliance with **data privacy laws**.
 - Use **role-based access control (RBAC)** and encrypted storage.
 
-## **3. Quick Hands-On Activity: Analyzing MLOps Challenges**
+## **Quick Discussion: Analyzing MLOps Challenges**
 ### **Task: Identify Issues in an ML Workflow**
 Look at the following ML workflow and answer: **What MLOps principles are missing?**
 
