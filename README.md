@@ -20,8 +20,8 @@ MLOps (Machine Learning Operations) is the practice of applying DevOps principle
 |--------------------------|:------------:|----------------------------------|
 | [Setup](./setup/README.md) | 2 min | Set up the development environment |
 | [Core Principles of MLOps](./microlesson-01/README.md) | 25 min | Learn best practices and strategies |
-| [MLOps Tools & Technologies](./microlesson-02/README.md) | 20 min | Explore MLflow and model tracking |
-| [Implementing MLOps](./microlesson-03/README.md) | 225 min | Modify a prebuilt ML pipeline to follow MLOps principles |
+| [MLOps Tools & Technologies](./microlesson-02/README.md) | 25 min | Explore MLflow and model tracking |
+| [Implementing MLOps](./microlesson-03/README.md) | 25 min | Modify a prebuilt ML pipeline to follow MLOps principles |
 | **Total Content** | **~90 min** | |
 
 
