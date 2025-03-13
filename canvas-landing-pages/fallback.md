@@ -1,27 +1,25 @@
-<!-- ! Do not delete or rename this file! -->
 <h1>
   <span class="prefix"></span>
-  <span class="headline">[tktk Headline]</span>
+  <span class="headline">MLOps Fundamentals</span>
 </h1>
 
-tktk Add some default course navigation content here. This landing page will be used when a student's course cannot be determined, so don't include any course-specific details.
+## About
+
+MLOps (Machine Learning Operations) is the practice of applying DevOps principles to machine learning workflows. It ensures that ML models are deployed, monitored, and maintained efficiently in production environments. This module will provide hands-on experience in implementing MLOps principles using practical tools and techniques.
+
+### **By the end of this module, you will be able to:**
+- **Understand** the key challenges of operationalizing ML models.
+- **Define** MLOps and its core principles.
+- **Identify** best practices for versioning, testing, and deploying ML models.
+- **Compare** common MLOps tools and their use cases.
+- **Modify** an existing ML pipeline to incorporate essential MLOps components.
 
 ## Content
 
-| Lesson | Est. Delivery Time | Skills |
-| ------ |:------------------:| ------ |
-| [Setup](../setup/README.md)                          | -- | Set up the development environment. |
-| [Concepts](../concepts/README.md)                    | -- | tktk Skills covered.                |
-| [tktk Microlesson Name](../microlesson-01/README.md) | -- | tktk Skills covered.                |
-| **Total content**                                    | -- |                                     |
-
-## Level Up content
-
-| Lesson | Est. Delivery Time | Skills |
-| ------ |:------------------:| ------ |
-| [tktk Microlesson Name](../microlesson-02/README.md) | -- | tktk Skills covered. |
-| **Total Level Up content**                           | -- |                      |
-
-## References
-
-📖 [Reference Materials](../references/README.md)
+| Lesson | Est. Time | Skills Focus |
+|--------------------------|:------------:|----------------------------------|
+| [Setup](../setup/README.md) | 2 min | Set up the development environment |
+| [Core Principles of MLOps](../microlesson-01/README.md) | 25 min | Learn best practices and strategies |
+| [MLOps Tools & Technologies](../microlesson-02/README.md) | 20 min | Explore MLflow and model tracking |
+| [Implementing MLOps](../microlesson-03/README.md) | 225 min | Modify a prebuilt ML pipeline to follow MLOps principles |
+| **Total Content** | **~90 min** | |

@@ -1,44 +1,79 @@
 <h1>
   <span class="headline">MLOps Fundamentals</span>
-  <span class="subhead">Introduction</span>
+  <span class="subhead">Core Principles of MLOps</span>
 </h1>
 
-Welcome to "MLOps Fundamentals: Core Principles and Tools." Building on the deployment strategies discussed in the previous lesson, MLOps aims to bridge the gap between development and deployment of machine learning models, bringing the rigor and efficiency of DevOps to the machine learning lifecycle. 
+## **Overview**
+MLOps (Machine Learning Operations) is the set of best practices for **scaling, monitoring, and managing ML models** in production. This lesson covers the fundamental principles that ensure **robust, scalable, and maintainable ML workflows**.
 
-In this session, we'll explore the core principles of MLOps, examine key tools and technologies, and discuss best practices for building and managing robust, scalable, and reliable machine learning systems – all without getting bogged down in hands-on exercises. We'll focus on providing a solid theoretical foundation.
+### **Learning Objectives**
+By the end of this microlesson, you will:
+- **Understand** why MLOps is essential for ML lifecycle management.
+- **Identify** key challenges in deploying ML models.
+- **Apply** core MLOps principles to streamline ML workflows.
 
-### A. The Challenges of Operationalizing Machine Learning
+## **1. Why MLOps Matters**
 
-Operationalizing ML models presents unique challenges:
+### **The Problem: ML Models in Production**
+Many organizations build machine learning models but struggle with:
+- **Reproducibility issues** – Hard to track model versions and training parameters.
+- **Scalability challenges** – Models work in development but fail in production.
+- **Lack of automation** – Manual deployment processes are error-prone and inefficient.
 
-- 🏢 **Siloed workflows:** Data scientists, engineers, and operations teams often work in isolation.
-- 🤖 **Manual processes:** Many aspects of the ML lifecycle are often performed manually.
-- 🔁 **Lack of reproducibility:** Inconsistencies in data, code, and environments hinder reproducibility.
-- 📂 **Difficulties in model versioning and tracking:** Challenging to track model versions and roll back if needed.
-- 🛠️ **Monitoring and debugging complexities:** More complex than with traditional software.
-- 📈 **Scaling challenges:** Requires specialized infrastructure and expertise.
-- 🔒 **Security and compliance:** Protecting sensitive data adds complexity.
+### **The Solution: MLOps**
+MLOps introduces practices from DevOps to machine learning, ensuring:
+✅ **Version control** for datasets, models, and code.  
+✅ **Automated deployment pipelines** for continuous integration (CI) and delivery (CD).  
+✅ **Monitoring & logging** to detect model drift and performance issues.  
+✅ **Collaboration between teams** (data scientists, ML engineers, IT).  
 
+## **Core Principles of MLOps**
 
-**Real-world example:** A company develops a cutting-edge fraud detection model, but struggles to deploy it due to integration issues, lack of monitoring, and difficulty in retraining. This highlights the need for a structured approach like MLOps to bridge the gap between development and production.
+<div class="mermaid">
+graph TD;
+    A["Core Principles of MLOps"] --> B["Reproducibility"];
+    A --> C["Automation & CI/CD"];
+    A --> D["Scalability & Performance"];
+    A --> E["Monitoring & Model Drift Detection"];
+    A --> F["Security & Governance"];
+</div>
 
-**Discussion Point:** Which of these challenges resonate most with your experiences (or anticipated experiences) in working with machine learning projects? How do these challenges relate to the deployment considerations discussed in the previous lesson on "AI Model Deployment"?
+### **1. Reproducibility**
+- Track every ML experiment (datasets, hyperparameters, results).
+- Use **MLflow, DVC, or Git** for logging and versioning.
 
-### B. What is MLOps?
+### **2. Automation & CI/CD**
+- Automate training, testing, and deployment.
+- Use **Docker, Kubernetes, Jenkins, or GitHub Actions**.
 
-**MLOps (Machine Learning Operations)** is a set of practices, principles, and tools that aims to streamline and automate the entire machine learning lifecycle, from data preparation and model training to deployment, monitoring, and maintenance. It's about applying DevOps principles to machine learning.
+### **3. Scalability & Performance**
+- Optimize models for large-scale deployment.
+- Use **batch processing, parallelization, and cloud services**.
 
-**Key Goals of MLOps:**
+### **4. Monitoring & Model Drift Detection**
+- Implement **real-time monitoring** of model predictions.
+- Track **data distribution shifts** to retrain models as needed.
 
-- ⏩ **Faster time to market:** Accelerate deployment.
-- 🤝 **Improved collaboration:** Break down silos between teams.
-- ⚙️ **Increased efficiency:** Automate processes and optimize resource use.
-- 🔄 **Enhanced reproducibility:** Ensure experiments can be reliably reproduced.
-- 📊 **Better model governance:** Track model versions, lineage, and metrics.
-- 📡 **Scalability and reliability:** Build scalable systems that maintain high availability.
-- 🔁 **Continuous improvement:** Establish feedback loops for continuous improvement.
+### **5. Security & Governance**
+- Ensure compliance with **data privacy laws**.
+- Use **role-based access control (RBAC)** and encrypted storage.
 
+## **3. Quick Hands-On Activity: Analyzing MLOps Challenges**
+### **Task: Identify Issues in an ML Workflow**
+Look at the following ML workflow and answer: **What MLOps principles are missing?**
 
-**MLOps is not just about tools; it's also about people, processes, and culture.** It's about creating a streamlined, collaborative, and efficient workflow for developing and deploying machine learning models, ensuring they deliver sustained business value.
+```plaintext
+1. Data scientist trains a model locally with no version control.
+2. Model is manually deployed by copying files to a server.
+3. No automated testing or monitoring is in place.
+```
 
+#### **Discussion Questions:**
+- What are the risks of this workflow?
+- How would you improve it using MLOps principles?
+
+## **4. Key Takeaways**
+✅ MLOps **bridges the gap** between ML development and deployment.  
+✅ Reproducibility, automation, scalability, monitoring, and security are key.  
+✅ Implementing MLOps practices **ensures reliability and efficiency** in ML systems.  
 

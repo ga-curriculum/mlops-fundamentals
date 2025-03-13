@@ -1,106 +1,87 @@
 {
     "org": {
-        "friendlyName": "Modular Curriculum All Courses",
-        "name": "modular-curriculum-all-courses"
+      "friendlyName": "Modular Curriculum All Courses",
+      "name": "modular-curriculum-all-courses"
     },
     "repo": {
-        "friendlyName": "MLOps Fundamentals",
-        "name": "mlops-fundamentals",
-        "type": "Lesson",
-        "about": "",
-        "starterCode": "",
-        "solutionCode": "",
-        "deployedSite": ""
+      "friendlyName": "MLOps Fundamentals",
+      "name": "mlops-fundamentals",
+      "type": "Lesson",
+      "about": "",
+      "starterCode": "",
+      "solutionCode": "",
+      "deployedSite": ""
     },
     "courses": [
-        {
-            "name": "fallback",
-            "courseAcronym": "",
-            "courseFullName": "",
-            "logoUrl": "",
-            "microlessons": [
-                 {
-                    "friendlyName": "Setup",
-                    "dirName": "setup",
-                    "type": "Content",
-                    "skill": "",
-                    "learningObjective": "",
-                    "videoUrl": "",
-                    "videoLengthInMinutes": 0,
-                    "estimatedDeliveryTimeInMinutes": 2
-                },
-                {
-                    "friendlyName": "Introduction",
-                    "dirName": "microlesson-01",
-                    "type": "Content",
-                    "skill": "",
-                    "learningObjective": "",
-                    "videoUrl": "",
-                    "videoLengthInMinutes": 0,
-                    "estimatedDeliveryTimeInMinutes": 5
-                },
-                {
-                    "friendlyName": "Core Principles of MLOps",
-                    "dirName": "microlesson-02",
-                    "type": "Content",
-                    "skill": "",
-                    "learningObjective": "",
-                    "videoUrl": "",
-                    "videoLengthInMinutes": 0,
-                    "estimatedDeliveryTimeInMinutes": 35
-                },
-                {
-                    "friendlyName": "MLOps Tools and Technologies: A Practical Overview",
-                    "dirName": "microlesson-03",
-                    "type": "Content",
-                    "skill": "",
-                    "learningObjective": "",
-                    "videoUrl": "",
-                    "videoLengthInMinutes": 0,
-                    "estimatedDeliveryTimeInMinutes": 20
-                },
-                {
-                    "friendlyName": "Implementing MLOps: A Simplified Example, Revisited",
-                    "dirName": "microlesson-04",
-                    "type": "Content",
-                    "skill": "",
-                    "learningObjective": "",
-                    "videoUrl": "",
-                    "videoLengthInMinutes": 0,
-                    "estimatedDeliveryTimeInMinutes": 25
-                },
-                {
-                    "friendlyName": "Conclusion and Future Trends",
-                    "dirName": "microlesson-05",
-                    "type": "Content",
-                    "skill": "",
-                    "learningObjective": "",
-                    "videoUrl": "",
-                    "videoLengthInMinutes": 0,
-                    "estimatedDeliveryTimeInMinutes": 5
-                }
-            ],
-            "isHeaderShown": true,
-            "isHeaderModuleNavShown": true,
-            "isHeaderHomeNavShown": true,
-            "isHeaderMicrolessonNavShown": true,
-            "isHeaderMicrolessonVideoLinkShown": true,
-            "isHeaderNavSettingsShown": true,
-            "isFooterCopyrightShown": true,
-            "isFooterLessonNavShown": true,
-            "isStickyNavSettingShown": true,
-            "isStickyNavAllowed": true,
-            "isFixedNavAllowed": true,
-            "isStickyNavDefault": true,
-            "isStickyNavForcedDefault": false,
-            "isFixedNavForcedDefault": false,
-            "isDarkModeSettingShown": true,
-            "isDarkModeAllowed": true,
-            "isLightModeAllowed": true,
-            "isLightModeDefault": true,
-            "isLightModeForcedDefault": false,
-            "isDarkModeForcedDefault": false,
-            "isActivityTimeShown": true
-        }
+      {
+        "name": "fallback",
+        "courseAcronym": "",
+        "courseFullName": "",
+        "logoUrl": "",
+        "microlessons": [
+          {
+            "friendlyName": "Setup",
+            "dirName": "setup",
+            "type": "Setup",
+            "skill": "",
+            "learningObjective": "",
+            "videoUrl": "",
+            "videoLengthInMinutes": 0,
+            "estimatedDeliveryTimeInMinutes": 2
+          },
+          {
+            "friendlyName": "Core Principles of MLOps",
+            "dirName": "microlesson-01",
+            "type": "Content",
+            "skill": "",
+            "learningObjective": "",
+            "videoUrl": "",
+            "videoLengthInMinutes": 0,
+            "estimatedDeliveryTimeInMinutes": 25
+          },
+          {
+            "friendlyName": "MLOps Tools & Technologies",
+            "dirName": "microlesson-02",
+            "type": "Content",
+            "skill": "",
+            "learningObjective": "",
+            "videoUrl": "",
+            "videoLengthInMinutes": 0,
+            "estimatedDeliveryTimeInMinutes": 20
+          },
+          {
+            "friendlyName": "Implementing MLOps",
+            "dirName": "microlesson-03",
+            "type": "Content",
+            "skill": "",
+            "learningObjective": "",
+            "videoUrl": "",
+            "videoLengthInMinutes": 0,
+            "estimatedDeliveryTimeInMinutes": 25
+          }
+        ],
+        "isHeaderShown": true,
+        "isHeaderModuleNavShown": true,
+        "isHeaderHomeNavShown": true,
+        "isHeaderMicrolessonNavShown": true,
+        "isHeaderMicrolessonVideoLinkShown": true,
+        "isHeaderNavSettingsShown": true,
+        "isFooterCopyrightShown": true,
+        "isFooterLessonNavShown": true,
+        "isStickyNavSettingShown": true,
+        "isStickyNavAllowed": true,
+        "isFixedNavAllowed": true,
+        "isStickyNavDefault": true,
+        "isStickyNavForcedDefault": false,
+        "isFixedNavForcedDefault": false,
+        "isDarkModeSettingShown": true,
+        "isDarkModeAllowed": true,
+        "isLightModeAllowed": true,
+        "isLightModeDefault": true,
+        "isLightModeForcedDefault": false,
+        "isDarkModeForcedDefault": false,
+        "isActivityTimeShown": true
+      }
     ]
-}
+  }
+  

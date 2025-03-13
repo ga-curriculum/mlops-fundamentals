@@ -1,95 +1,131 @@
 <h1>
   <span class="headline">MLOps Fundamentals</span>
-  <span class="subhead">MLOps Tools and Technologies</span>
+  <span class="subhead">Implementing MLOps: A Practical Example</span>
 </h1>
 
-Let's explore the landscape of MLOps tools, focusing on categories relevant to our simplified approach without Kubernetes and emphasizing readily accessible options like MLflow.
+## **Overview**
 
-### A. Orchestration and Workflow Management
+Now that you understand MLOps principles and tools, it's time to **apply them in a real-world scenario**. In this hands-on lesson, you'll modify an existing ML pipeline to incorporate **MLOps best practices**.
 
-These tools help automate and manage the execution of ML pipelines.
+### **Learning Objectives**
 
--   **Apache Airflow, Prefect, Luigi:** Powerful tools for complex workflows, but we'll focus on simpler automation using Python scripts and basic scheduling for this introductory class.
-    -   **Conceptual Role:** Orchestrating the different steps in an ML pipeline (data preprocessing, model training, evaluation, etc.). Defining dependencies between tasks and scheduling their execution.
+By the end of this microlesson, you will:
 
-**For this class:** We will emphasize the *principles* of orchestration (task dependencies, scheduling) without using these specific tools. We can illustrate these principles with simple Python scripts and discuss how they *could* be scheduled with tools like `cron`.
+- **Analyze** an ML pipeline and identify missing MLOps components.
+- **Modify** the pipeline to include experiment tracking, versioning, and automation.
+- **Use MLflow** to log models and track performance over multiple runs.
 
-### B. CI/CD for Machine Learning
+---
 
-These tools automate the building, testing, and deployment of ML models and code.
+## **1. Understanding the Existing Pipeline**
 
--   **Jenkins, GitLab CI/CD, CircleCI, Azure DevOps, Google Cloud Build, AWS CodePipeline:** Popular CI/CD platforms that can be used to automate various stages of the ML lifecycle.
-    -   **Conceptual Role:** Automating the testing of code and models whenever changes are made, and potentially automating the deployment process.
+You’ve been given a basic ML training script, but it lacks:
 
-**For this class:** We will focus on the *principles* of CI/CD (automated testing, version control) and how they apply to machine learning without implementing a full CI/CD pipeline. We'll emphasize the difference between Continuous Delivery and Continuous Deployment, as outlined earlier.
+- **Experiment tracking** (no way to compare different runs).
+- **Model versioning** (no structured model storage).
+- **Automated deployment** (manual model saving/loading).
 
-### C. Model Training and Experiment Tracking
+### **Before: Original ML Pipeline**
 
-These tools help manage and track the model training process.
+```python
+import joblib
+from sklearn.ensemble import RandomForestClassifier
 
--   **MLflow:**
-    -   An open-source platform for managing the end-to-end machine learning lifecycle.
-    -   **MLflow Tracking:** Log parameters, metrics, and artifacts (including models) for each experiment run. Visualize and compare runs.
-        -   **Example:** Logging hyperparameters like learning rate and regularization strength, metrics like accuracy and AUC, and the trained model itself to MLflow during each training run.
-    -   **MLflow Projects:** Package your code and dependencies for reproducible runs. (Conceptual discussion for this class)
-    -   **MLflow Models:** A standard format for packaging models that can be used with various deployment tools.
-        -   **Example:** Saving a trained scikit-learn model in the MLflow Model format, which includes the model file, a description of the environment (e.g., `conda.yaml` or `requirements.txt`), and the model signature.
-    -   **MLflow Registry:** (Optional) A centralized model store for managing the model lifecycle. (Conceptual discussion for this class)
-    -   **Strengths:** Comprehensive, flexible, supports various ML frameworks, good for experiment tracking and model management, easy to use locally.
-    -   **Weaknesses:** Some advanced features might require more complex setup.
+# Load dataset
+X_train, X_test, y_train, y_test = load_data()
 
--   **TensorBoard:**
-    -   A visualization toolkit for TensorFlow.
-    -   **Strengths:** Excellent for visualizing TensorFlow models.
-    -   **Weaknesses:** Primarily focused on TensorFlow.
+# Train model
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
 
--   **Weights & Biases (W&B), Comet, Neptune.ai:**
-    -   Commercial platforms for experiment tracking and collaboration.
-    -   **Strengths:** User-friendly, powerful visualization, good for collaboration.
-    -   **Weaknesses:** Commercial products, potential cost implications.
+# Save model
+joblib.dump(model, "model.pkl")
+```
 
-**For this class:** We will focus on **MLflow** as a practical and accessible tool for experiment tracking and model management. We will demonstrate how to use MLflow Tracking to log experiments and MLflow Models to package models.
+---
 
-### D. Model Deployment and Serving
+## **2. Hands-On: Adding MLOps Best Practices**
 
-For this class, we will focus on simple deployment options, avoiding Kubernetes.
+### **Step 1: Add Experiment Tracking with MLflow**
 
--   **MLflow Models:** We will use MLflow's model packaging capabilities to create a standardized model artifact.
--   **Flask:** A lightweight Python web framework that can be used to create a simple REST API to serve predictions from the MLflow model.
-    -   **Example:** Writing a Flask application that loads an MLflow model and exposes an endpoint that accepts input data and returns predictions.
--   **Other options (Conceptual Discussion):**
-    -   **TensorFlow Serving:** Primarily for TensorFlow models.
-    -   **TorchServe:** Model serving framework for PyTorch.
-    -   **BentoML:** For packaging and deploying models as containers (can be used without Kubernetes for simple deployments).
-    -   **Cloud-based deployment options (SageMaker, Azure ML, Vertex AI):** Briefly discuss these but not use them in practice.
+Modify the script to log key parameters and metrics in **MLflow**.
 
-**For this class:** We will demonstrate how to use MLflow in conjunction with Flask to create a simple REST API for serving model predictions, mirroring the simplified deployment approach discussed in the previous lesson. We'll also touch upon how this setup can be adapted for Continuous Delivery or Continuous Deployment.
+```python
+import mlflow
+import mlflow.sklearn
 
-### E. Model Monitoring and Management
+mlflow.start_run():
+    model = RandomForestClassifier(n_estimators=100)
+    model.fit(X_train, y_train)
+    acc = model.score(X_test, y_test)
+    
+    mlflow.log_param("model_type", "RandomForest")
+    mlflow.log_metric("accuracy", acc)
+    mlflow.sklearn.log_model(model, "model")
+```
 
-We will focus on the conceptual aspects of monitoring and the basic tools for simple setups.
+✅ **Now, each run is logged, making it easier to compare models.**
 
--   **Prometheus and Grafana:** Powerful open-source tools for monitoring and visualization. We will mention them as options but likely not use them in practice for this class.
--   **Cloud-based monitoring tools (CloudWatch, Azure Monitor, Google Cloud Monitoring):** These can be used to monitor cloud-based deployments.
--   **Simple custom dashboards:** We can use Python libraries like `matplotlib` or `streamlit` to create simple dashboards to visualize model performance metrics over time (logged in MLflow).
+---
 
-**For this class:** We will focus on the *importance* of monitoring and demonstrate how to log metrics with MLflow. We can also show how to create a simple dashboard to visualize these metrics, tying back to the monitoring principles discussed earlier.
+### **Step 2: Implement Model Versioning**
 
-### F. Data Versioning and Management
+Modify `model_saving.py` to store models in the **MLflow Model Registry**.
 
--   **DVC (Data Version Control), Pachyderm, Delta Lake:** Tools for managing and versioning data in ML projects.
-    -   **Conceptual Role:** Tracking changes to datasets, ensuring reproducibility, and managing data pipelines.
+```python
+mlflow.sklearn.log_model(model, "model")
+mlflow.register_model("runs:/<run_id>/model", "MLPipelineModel")
+```
 
-**For this class:** We will briefly discuss the *importance* of data versioning but likely not implement these tools in practice. We can mention that these tools exist for managing data in a more robust MLOps pipeline.
+✅ **Now, models are versioned and accessible via MLflow UI.**
 
-### G. Choosing the Right Tools: A Pragmatic Approach
+---
 
-The best MLOps tools for your project depend on various factors. For this introductory class, we emphasize a pragmatic approach:
+### **Step 3: Prepare for Deployment**
 
--   **Start simple:** Focus on core principles and readily available tools.
--   **MLflow is our primary tool:** We will use MLflow for experiment tracking, model packaging, and potentially simple model deployment.
--   **Python scripts for automation:** Illustrate automation principles without complex orchestration tools.
--   **Focus on core concepts:** Version control with Git, simple model serving with Flask, basic monitoring principles.
+Modify `deploy.py` to load models directly from the **MLflow Model Registry**.
 
-**Discussion Point:** How can we balance the need for simplicity with the desire to implement a robust MLOps pipeline? What are the trade-offs to consider when choosing tools, especially in light of the deployment and data pipeline considerations from the previous lesson?
+```python
+import mlflow.pyfunc
+model = mlflow.pyfunc.load_model("models:/MLPipelineModel/Production")
+```
+
+✅ **Now, the model can be served dynamically without manual file handling.**
+
+---
+
+## **3. Key Takeaways**
+
+✅ MLOps **improves ML workflows** by adding automation and tracking.\
+✅ MLflow enables **experiment logging, model versioning, and easy deployment**.\
+✅ A structured pipeline ensures **scalability and maintainability**.
+
+---
+
+## **Bonus Challenge: Deploy Your Model for Public Access**
+
+Want to **share your model online**? Try deploying it using **FastAPI + Docker + Render (or Hugging Face Spaces)**.
+
+### **Steps:**
+
+1. **Wrap your model in an API** using FastAPI:
+   ```python
+   from fastapi import FastAPI
+   import mlflow.pyfunc
+
+   app = FastAPI()
+   model = mlflow.pyfunc.load_model("models:/MLPipelineModel/Production")
+
+   @app.post("/predict/")
+   async def predict(data: dict):
+       return {"prediction": model.predict([data["input"]]).tolist()}
+   ```
+2. **Containerize it with Docker:**
+   ```bash
+   docker build -t my-ml-api .
+   docker run -p 8000:8000 my-ml-api
+   ```
+3. **Deploy on Render, Hugging Face Spaces, or another cloud service.**
+
+Once deployed, you can share your **public API endpoint** with others to test your model in real-time! 🎯
 

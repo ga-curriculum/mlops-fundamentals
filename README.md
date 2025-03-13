@@ -5,26 +5,24 @@
 
 ## About
 
-By the end of this session, you will be able to:
+MLOps (Machine Learning Operations) is the practice of applying DevOps principles to machine learning workflows. It ensures that ML models are deployed, monitored, and maintained efficiently in production environments. This module will provide hands-on experience in implementing MLOps principles using practical tools and techniques.
 
-- **List** the key challenges of operationalizing machine learning.
+### **By the end of this module, you will be able to:**
+- **Understand** the key challenges of operationalizing ML models.
 - **Define** MLOps and its core principles.
-- **Explain** the different stages of the ML lifecycle and how MLOps addresses each stage.
-- **Identify** and compare popular MLOps tools and technologies, focusing on their conceptual strengths and weaknesses.
-- **Defone** best practices for implementing MLOps in an organization.
-- **Recognize** the benefits of adopting an MLOps approach.
-- **Develop** strategies for building and managing robust, scalable, and reliable ML systems.
-- **Differentiate** between Continuous Delivery and Continuous Deployment and understand their roles in MLOps.
+- **Identify** best practices for versioning, testing, and deploying ML models.
+- **Compare** common MLOps tools and their use cases.
+- **Modify** an existing ML pipeline to incorporate essential MLOps components.
 
 ## Content
 
-| Lesson                                                                                           | Est. Delivery Time | Skills                                          |
-| ------------------------------------------------------------------------------------------------ |:------------------:| ---------------------------------------------- |
-| [Setup](./setup/README.md)                                                                      | 2 min                 | Set up the development environment.           |
-| [Introduction](./microlesson-01/README.md)                                                      | 5 min              | Understand the basics of MLOps.               |
-| [Core Principles of MLOps](./microlesson-02/README.md)                                          | 35 min             | Learn the foundational principles of MLOps.   |
-| [MLOps Tools and Technologies: A Practical Overview](./microlesson-03/README.md)               | 20 min             | Explore key MLOps tools and technologies.     |
-| [Implementing MLOps: A Simplified Example, Revisited](./microlesson-04/README.md)              | 25 min             | Apply MLOps principles in a practical way.    |
-| [Conclusion and Future Trends](./microlesson-05/README.md)                                      | 5 min              | Review key takeaways and future trends.       |
-| **Total content**                                                                               | ~90 min            |                                              |
+| Lesson | Est. Time | Skills Focus |
+|--------------------------|:------------:|----------------------------------|
+| [Setup](./setup/README.md) | 2 min | Set up the development environment |
+| [Core Principles of MLOps](./microlesson-01/README.md) | 25 min | Learn best practices and strategies |
+| [MLOps Tools & Technologies](./microlesson-02/README.md) | 20 min | Explore MLflow and model tracking |
+| [Implementing MLOps](./microlesson-03/README.md) | 225 min | Modify a prebuilt ML pipeline to follow MLOps principles |
+| **Total Content** | **~90 min** | |
+
+
 

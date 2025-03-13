@@ -84,6 +84,10 @@
       type="image/png"
       href="https://{{ site.github.pages_hostname }}/{{ site.github.owner_name }}/universal-resources-internal/static/v2/assets/favicon.png"
     />
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'
+      mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "dark", flowchart: { curve: "step" } })
+    </script>
     <title>MLOps Fundamentals</title>
   </head>
   <body>
