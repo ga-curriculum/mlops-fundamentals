@@ -30,8 +30,16 @@ You’ve been given a basic ML training script, but it lacks:
 ```python
 import joblib
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
 
 # Load dataset
+def load_data():
+    dataset = fetch_california_housing()
+    X, y = dataset.data, dataset.target
+    return train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Now use the defined function
 X_train, X_test, y_train, y_test = load_data()
 
 # Train model
