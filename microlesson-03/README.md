@@ -67,15 +67,74 @@ Modify the script to log key parameters and metrics in **MLflow**.
 ```python
 import mlflow
 import mlflow.sklearn
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+from sklearn.metrics import accuracy_score
 
-mlflow.start_run():
-    model = RandomForestClassifier(n_estimators=100)
+print("Loading data...")
+iris = load_iris()
+X = iris.data
+y = iris.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+print(f"Training data shape: X_train={X_train.shape}, y_train={y_train.shape}")
+print(f"Testing data shape: X_test={X_test.shape}, y_test={y_test.shape}")
+print("-" * 30)
+
+mlflow.set_experiment("MLOps Fundamentals - Iris")
+
+with mlflow.start_run() as run:
+    run_id = run.info.run_id
+    print(f"Starting MLflow Run ID: {run_id}")
+    print("-" * 30)
+
+    n_estimators = 100
+    max_depth = 5
+    random_state = 42
+
+    print("Logging parameters...")
+    mlflow.log_param("n_estimators", n_estimators)
+    mlflow.log_param("max_depth", max_depth)
+    mlflow.log_param("random_state", random_state)
+    mlflow.log_param("test_size", 0.3)
+    mlflow.log_param("model_type", "RandomForestClassifier")
+
+    print("Training model...")
+    model = RandomForestClassifier(
+        n_estimators=n_estimators,
+        max_depth=max_depth,
+        random_state=random_state
+    )
     model.fit(X_train, y_train)
-    acc = model.score(X_test, y_test)
-    
-    mlflow.log_param("model_type", "RandomForest")
-    mlflow.log_metric("accuracy", acc)
-    mlflow.sklearn.log_model(model, "model")
+    print("Model training complete.")
+
+    print("Evaluating model...")
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    print(f"Model accuracy on test set: {accuracy:.4f}")
+
+    print("Logging metrics...")
+    mlflow.log_metric("accuracy", accuracy)
+
+    registered_model_name = "IrisRandomForestPipeline"
+    print(f"Logging and registering model as '{registered_model_name}'...")
+    mlflow.sklearn.log_model(
+        sk_model=model,
+        artifact_path="model",
+        registered_model_name=registered_model_name
+    )
+    print("Model logged and registered.")
+    print("-" * 30)
+
+print("MLflow run completed.")
+print(f"Run ID: {run_id}")
+print(f"To view the run and registered model:")
+print(f"1. Open your terminal in the directory where you ran this script.")
+print(f"2. Run the command: mlflow ui")
+print(f"3. Open your browser to http://localhost:5000 (or the address shown)")
+print("-" * 30)
+
 ```
 
 ✅ **Now, each run is logged, making it easier to compare models.**
