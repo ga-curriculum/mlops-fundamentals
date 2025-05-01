@@ -30,24 +30,30 @@ You’ve been given a basic ML training script, but it lacks:
 ```python
 import joblib
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
 
-# Load dataset
-def load_data():
-    dataset = fetch_california_housing()
-    X, y = dataset.data, dataset.target
-    return train_test_split(X, y, test_size=0.2, random_state=42)
+iris = load_iris()
+X = iris.data
+y = iris.target
 
-# Now use the defined function
-X_train, X_test, y_train, y_test = load_data()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# Train model
-model = RandomForestClassifier()
+print(f"Training data shape: X_train={X_train.shape}, y_train={y_train.shape}")
+print(f"Testing data shape: X_test={X_test.shape}, y_test={y_test.shape}")
+
+print("Training model...")
+model = RandomForestClassifier(random_state=42)
 model.fit(X_train, y_train)
+print("Model training complete.")
 
-# Save model
-joblib.dump(model, "model.pkl")
+accuracy = model.score(X_test, y_test)
+print(f"Model accuracy on test set: {accuracy:.4f}")
+
+model_filename = "model.pkl"
+joblib.dump(model, model_filename)
+print(f"Model saved to {model_filename}")
+
 ```
 
 ---
