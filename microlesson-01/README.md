@@ -4,7 +4,7 @@
 </h1>
 
 ## **Overview**
-MLOps (Machine Learning Operations) is the set of best practices for **scaling, monitoring, and managing ML models** in production. This lesson covers the fundamental principles that ensure **robust, scalable, and maintainable ML workflows**.
+MLOps (Machine Learning Operations) is the set of best practices for **scaling, monitoring, and managing ML models** in production. This lesson introduces the core principles that enable **robust, scalable, and maintainable ML workflows** across the entire model lifecycle.
 
 ### **Learning Objectives**
 By the end of this microlesson, you will:
@@ -17,7 +17,7 @@ By the end of this microlesson, you will:
 ### **The Problem: ML Models in Production**
 Many organizations build machine learning models but struggle with:
 - **Reproducibility issues** – Hard to track model versions and training parameters.
-- **Scalability challenges** – Models work in development but fail in production.
+- **Scalability challenges** – Models perform well in development but fail to scale or operate reliably in production.
 - **Lack of automation** – Manual deployment processes are error-prone and inefficient.
 
 ### **The Solution: MLOps**
@@ -25,7 +25,7 @@ MLOps introduces practices from DevOps to machine learning, ensuring:
 ✅ **Version control** for datasets, models, and code.  
 ✅ **Automated deployment pipelines** for continuous integration (CI) and delivery (CD).  
 ✅ **Monitoring & logging** to detect model drift and performance issues.  
-✅ **Collaboration between teams** (data scientists, ML engineers, IT).  
+✅ **Collaboration between teams** improved collaboration between data scientists, ML engineers, and IT teams.  
 
 ## **Core Principles of MLOps**
 
@@ -72,7 +72,7 @@ Look at the following ML workflow and answer: **What MLOps principles are missin
 - What are the risks of this workflow?
 - How would you improve it using MLOps principles?
 
-## **4. Key Takeaways**
+## **Key Takeaways**
 ✅ MLOps **bridges the gap** between ML development and deployment.  
 ✅ Reproducibility, automation, scalability, monitoring, and security are key.  
 ✅ Implementing MLOps practices **ensures reliability and efficiency** in ML systems.  
