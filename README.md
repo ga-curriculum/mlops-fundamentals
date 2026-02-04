@@ -5,14 +5,14 @@
 
 ## About
 
-MLOps (Machine Learning Operations) is the practice of applying DevOps principles to machine learning workflows. It ensures that ML models are deployed, monitored, and maintained efficiently in production environments. This module will provide hands-on experience in implementing MLOps principles using practical tools and techniques.
+MLOps (Machine Learning Operations) applies DevOps principles to machine learning workflows. It ensures that ML models are deployed, monitored, and maintained efficiently in production environments. This module will provide hands-on experience in implementing MLOps principles using practical tools and techniques.
 
 ### **By the end of this module, you will be able to:**
 - **Understand** the key challenges of operationalizing ML models.
 - **Define** MLOps and its core principles.
-- **Identify** best practices for versioning, testing, and deploying ML models.
+- **Apply** best practices for versioning, testing, and deploying ML models.
 - **Compare** common MLOps tools and their use cases.
-- **Modify** an existing ML pipeline to incorporate essential MLOps components.
+- **Enhance** an existing ML pipeline to incorporate essential MLOps components.
 
 ## Content
 
