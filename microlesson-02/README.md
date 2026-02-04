@@ -5,7 +5,7 @@
 
 ## **Overview**
 
-MLOps involves multiple tools that help manage the **ML lifecycle, automation, and deployment**. This lesson provides a hands-on introduction to **MLflow**, a key tool for **experiment tracking, model management, and deployment**.
+MLOps relies on a combination of tools to manage the **machine learning lifecycle, including experiment tracking, automation, and deployment**. This lesson introduces MLflow, a widely used MLOps tool for **experiment tracking, model management, and reproducibility**, through a hands-on walkthrough.
 
 ### **Learning Objectives**
 
