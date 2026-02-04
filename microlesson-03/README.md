@@ -11,9 +11,9 @@ Now that you understand MLOps principles and tools, it's time to **apply them in
 
 By the end of this microlesson, you will:
 
-- **Analyze** an ML pipeline and identify missing MLOps components.
+- **Analyze** an ML training pipeline and identify missing MLOps components.
 - **Modify** the pipeline to include experiment tracking, versioning, and automation.
-- **Use MLflow** to log models and track performance over multiple runs.
+- **Use MLflow** to track experiments, register models, and support deployment workflows.
 
 ---
 
@@ -219,7 +219,7 @@ except Exception as e:
 
 ✅ MLOps **improves ML workflows** by adding automation and tracking.\
 ✅ MLflow enables **experiment logging, model versioning, and easy deployment**.\
-✅ A structured pipeline ensures **scalability and maintainability**.
+✅ Structured MLOps pipelines improve **scalability, reliability, and team collaboration**.
 
 ---
 
